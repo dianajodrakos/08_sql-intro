@@ -96,7 +96,16 @@ describe('test routes', () => {
 
 
   it('using DELETE route, deletes correct database entry', async () => {
+    const newTest = await TestService.createEntry({
+      text: 'hello world',
+      number: 42,
+      boolean: true,
+    });
 
+    const res = await request(app)
+      .delete(`/api/v1/test-api/${newTest.id}`);
+
+    expect(res.body).toEqual({ message: `Entry ${newTest.id} was deleted.` });
   });
 
 
