@@ -59,9 +59,9 @@ describe('test routes', () => {
       boolean: false,
     });
 
-    const res = await request(app).get('/api/v1/test-api/1');
+    const res = await request(app).get(`/api/v1/test-api/${newTest1.id}`);
 
-    expect(res).toEqual(newTest1);
+    expect(res.body).toEqual(newTest1);
   });
 
 
