@@ -47,7 +47,21 @@ describe('test routes', () => {
 
 
   it('using GET by id route, returns correct database entry', async () => {
+    const newTest1 = await TestService.createEntry({
+      text: 'hello world',
+      number: 42,
+      boolean: true,
+    });
 
+    const newTest2 = await TestService.createEntry({
+      text: 'goodnight moon',
+      number: 13,
+      boolean: false,
+    });
+
+    const res = await request(app).get('/api/v1/test-api/1');
+
+    expect(res).toEqual(newTest1);
   });
 
 
