@@ -65,7 +65,8 @@ describe('test routes', () => {
     expect(res.body).not.toEqual(newTest2);
   });
 
-  it('using GET by id route, returns correct database entry', async () => {
+
+  it('using PUT by id route, returns correct database entry', async () => {
     const newTest1 = await TestService.createEntry({
       text: 'hello world',
       number: 42,
@@ -91,6 +92,11 @@ describe('test routes', () => {
 
     expect(res.body).toEqual(updatedTest1);
     expect(res.body).not.toEqual(newTest2);
+  });
+
+
+  it('using DELETE route, deletes correct database entry', async () => {
+
   });
 
 
