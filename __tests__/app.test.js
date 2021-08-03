@@ -82,7 +82,7 @@ describe('test routes', () => {
       id: newTest1.id,
       text: 'hi mom',
       number: newTest1.number,
-      boolean: false,
+      boolean: true,
     };
 
     const res = await request(app)
