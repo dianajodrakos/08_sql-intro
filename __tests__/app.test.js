@@ -64,5 +64,9 @@ describe('test routes', () => {
     expect(res.body).toEqual(newTest1);
   });
 
+  it('using PUT route, updates correct database entry', async () => {
+
+  });
+
 
 });
