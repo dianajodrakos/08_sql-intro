@@ -2,7 +2,7 @@ const pool = require('../lib/utils/pool');
 const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
-const TestService = require('../services/TestService.js');
+const TestService = require('../lib/services/TestServices.js');
 
 describe('test routes', () => {
   beforeEach(() => {
