@@ -62,10 +62,33 @@ describe('test routes', () => {
     const res = await request(app).get(`/api/v1/test-api/${newTest1.id}`);
 
     expect(res.body).toEqual(newTest1);
+    expect(res.body).not.toEqual(newTest2);
   });
 
-  it('using PUT route, updates correct database entry', async () => {
+  it('using GET by id route, returns correct database entry', async () => {
+    const newTest1 = await TestService.createEntry({
+      text: 'hello world',
+      number: 42,
+      boolean: true,
+    });
 
+    const newTest2 = await TestService.createEntry({
+      text: 'goodnight moon',
+      number: 13,
+      boolean: false,
+    });
+
+    const updatedTest1 = {
+      id: newTest1.id,
+      text: 'hi mom',
+      number: newTest1.number,
+      boolean: false,
+    };
+
+    const res = await request(app).put(`/api/v1/test-api/${newTest1.id}`);
+
+    expect(res.body).toEqual(updatedTest1);
+    expect(res.body).not.toEqual(newTest2);
   });
 
 
