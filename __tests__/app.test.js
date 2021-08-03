@@ -3,7 +3,7 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 
-describe('08_sql-intro routes', () => {
+describe('test routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
