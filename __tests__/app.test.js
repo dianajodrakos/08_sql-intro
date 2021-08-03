@@ -26,6 +26,21 @@ describe('test routes', () => {
 
 
   it('using GET route, returns all database entries', async () => {
+    const newTest1 = await TestService.createEntry({
+      text: 'hello world',
+      number: 42,
+      boolean: true,
+    });
+
+    const newTest2 = await TestService.createEntry({
+      text: 'goodnight moon',
+      number: 13,
+      boolean: false,
+    });
+
+    const res = await request(app).get('/api/v1/test-api');
+
+    expect(res.body).toEqual([newTest1, newTest2]);
 
   });
 });
