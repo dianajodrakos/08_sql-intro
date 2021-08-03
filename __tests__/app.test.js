@@ -43,6 +43,12 @@ describe('test routes', () => {
     const res = await request(app).get('/api/v1/test-api');
 
     expect(res.body).toEqual([newTest1, newTest2]);
+  });
+
+
+  it('using GET by id route, returns correct database entry', async () => {
 
   });
+
+
 });
