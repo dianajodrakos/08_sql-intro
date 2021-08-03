@@ -7,4 +7,8 @@ describe('test routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
+
+  it('using POST route, inserts a new entry into database', async () => {
+
+  });
 });
