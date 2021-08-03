@@ -2,6 +2,7 @@ const pool = require('../lib/utils/pool');
 const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
+const TestService = require('../services/TestService.js');
 
 describe('test routes', () => {
   beforeEach(() => {
@@ -23,6 +24,7 @@ describe('test routes', () => {
       id: '1',
       ...newTest,
     });
+  });
 
 
   it('using GET route, returns all database entries', async () => {
