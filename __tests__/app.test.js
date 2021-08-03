@@ -23,5 +23,9 @@ describe('test routes', () => {
       id: '1',
       ...newTest,
     });
+
+
+  it('using GET route, returns all database entries', async () => {
+
   });
 });
