@@ -10,17 +10,17 @@ describe('test routes', () => {
 
   it('using POST route, inserts a new entry into database', async () => {
     const newTest = {
-      test: 'hello world',
+      text: 'hello world',
       number: 42,
       boolean: true,
     };
 
     const res = await request(app)
       .post('/api/v1/test-api')
-      .send(test);
+      .send(newTest);
 
     expect(res.body).toEqual({
-      id: 1,
+      id: '1',
       ...newTest,
     });
   });
