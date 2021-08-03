@@ -85,7 +85,9 @@ describe('test routes', () => {
       boolean: false,
     };
 
-    const res = await request(app).put(`/api/v1/test-api/${newTest1.id}`);
+    const res = await request(app)
+      .put(`/api/v1/test-api/${newTest1.id}`)
+      .send({ text: updatedTest1.text });
 
     expect(res.body).toEqual(updatedTest1);
     expect(res.body).not.toEqual(newTest2);
